@@ -25,12 +25,12 @@ S = "${WORKDIR}/git"
 EXTRA_OEMAKE = 'CROSS_COMPILE=${TARGET_PREFIX} CC="${TARGET_PREFIX}gcc ${TOOLCHAIN_OPTIONS}" V=1'
 
 python () {
-	if not d.getVar("UBOOT_MACHINE", True):
-		PN = d.getVar("PN", True)
-		FILE = os.path.basename(d.getVar("FILE", True))
-		bb.debug(1, "To build %s, see %s for instructions on \
-			     setting up your machine config" % (PN, FILE))
-		raise bb.parse.SkipPackage("because UBOOT_MACHINE is not set")
+    if not d.getVar("UBOOT_MACHINE", True):
+        PN = d.getVar("PN", True)
+        FILE = os.path.basename(d.getVar("FILE", True))
+        bb.debug(1, "To build %s, see %s for instructions on \
+            setting up your machine config" % (PN, FILE))
+        raise bb.parse.SkipPackage("because UBOOT_MACHINE is not set")
 }
 
 UBOOT_ELF ?= "u-boot-${MACHINE}-${PV}-${PR}"
