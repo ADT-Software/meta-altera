@@ -1,4 +1,4 @@
-LINUX_VERSION = "5.8"
+LINUX_VERSION = "5.10"
 
 SRCREV = "f7700e50b1d0fedadecefc75f3aa4d36c28d0a56"
 
